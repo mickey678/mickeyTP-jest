@@ -1,4 +1,5 @@
 const Util = require('./math');
+const interval = require('./interval')
 
 describe('Factorial', function () {
     test.each([
@@ -50,5 +51,26 @@ describe('Sum Primerial', function () {
         },
     );
 
+});
+
+
+describe('Overlaps ', function () {
+    inter = new interval(10,20);
+    test.each([
+        [new interval(10000000000,18),false],
+        [new interval(5,100000000000),false],
+        [new interval(-15,9),false],
+        [new interval(5,-9),false],
+        [new interval(10,18),true],
+        [new interval(50,20),true],
+        [new interval(11,25),true],
+        [new interval(5,15),true],
+    ])(
+        'Overlaps for %p is %p',
+        (n, expected) => {
+            expect(inter.overlaps(n)).toBe(expected);
+        },
+    );
+ 
 });
 
