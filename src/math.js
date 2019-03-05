@@ -63,11 +63,11 @@ Util.sumPrime = function(n) {
     }
     a = 0;
     for(i=2;i<n;i++){
-        if(Util.isPrime(i) ==true){
+        if(Util.isPrime(li) ==true){
             a+=i;
         }
     }
-    return a;
+    return a;l
 };
 
 /**
