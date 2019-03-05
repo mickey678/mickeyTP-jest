@@ -25,7 +25,36 @@ class Interval {
      * @returns {boolean}
      */
     overlaps(interval) {
-        return this.end > interval.start && this.start < interval.end;
+        if(interval.start > 1000000 || interval.end>1000000){
+            return false;
+        }
+        if(interval.start < 0 || interval.end<0){
+            return false;
+        }
+        if (this.end === interval.end){
+            return true;
+        }
+        if (this.start === interval.start){
+            return true;
+        }
+        if ((interval.start < this.start && 
+             interval.end < this.end && 
+             interval.end > this.start
+            )==true){
+             return true;
+        }
+        if ((interval.start > this.start && 
+             this.end < interval.end && 
+             interval.start<this.end)==true){
+             return true;
+        }
+        if (this.end < interval.end){
+            return false;
+        }
+        if (this.start>interval.start){
+            return false;
+        }
+        return false;
     }
 
     /**
