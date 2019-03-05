@@ -8,6 +8,8 @@ class Interval {
         return "[" + this.start + "," + this.end + "]";
     }
 
+
+
     /**
      * Exemple 1 :
      *      interval1 =                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
