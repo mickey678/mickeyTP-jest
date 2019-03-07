@@ -26,3 +26,28 @@ describe('Overlaps ', function () {
  
 });
 
+describe('Includes ', function () {
+    test.each([
+        [10,20,9,19,false],
+        [10,20,11,21,false],
+        [10,20,10,20,false],
+        [10,20,21,30,false],
+        [10,20,-21,-30,false],
+        [-10,-20,21,30,false],
+        [-10,20,21,30,false],
+        [-20,10,21,30,false],
+        [-10,20,19,30,false],
+        [0,20,-10,30,false],
+        [0,20,-10,30,false],
+        [-20,0,-15,-10,true],
+        [-20,0,-30,-19,false],
+        [-20,0,-30,-21,false],
+        [-20,0,-19,-1,true],
+    ])(
+        'Overlaps for %p is %p is %p is %p',
+        (n,n1,k,k1, expected) => {
+            expect(new interval(n,n1).includes(new interval(k,k1))).toBe(expected);
+        },
+    );
+ 
+});
