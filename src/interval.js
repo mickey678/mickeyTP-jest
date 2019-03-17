@@ -85,8 +85,8 @@ class Interval {
     if(tr2!==false){
         tab.push(interval.end)
     }
-        let a = tab.sort(function(a,b){return a-b});
-        return tab;
+       return tab.sort(function(a,b){return a-b});
+      
     };
 
     /**
