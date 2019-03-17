@@ -65,7 +65,28 @@ class Interval {
      * @returns {Interval[]}
      */
     union(interval) {
+        var tab = [this.end,this.start];
+        var tr1 = true;
+        var tr2 = true;
+    for (var index = 0; index < tab.length; index++) {
+        if(tab[index]=== interval.start) {
+           tr1=false
+        } 
+    }
+    if(tr1!==false){
+        tab.push(interval.start)
+    }
 
+    for (var index = 0; index < tab.length; index++) {
+        if(tab[index]=== interval.end) {
+           tr2=false
+        } 
+    }
+    if(tr2!==false){
+        tab.push(interval.end)
+    }
+        let a = tab.sort(function(a,b){return a-b});
+        return tab;
     };
 
     /**
