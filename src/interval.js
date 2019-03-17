@@ -106,7 +106,17 @@ class Interval {
      * @returns {Interval|null}
      */
     intersection(interval) {
-
+        var tab = [this.start,this.end];
+        var tab2 = [];
+        for (let index = 0; index < tab.length; index++) {
+            if(tab[index]===interval.start){
+                tab2.push(interval.start)
+            }
+            if(tab[index]===interval.end){
+                tab2.push(interval.end)
+            }
+        }
+        return tab2.sort(function(a,b){return a-b});
     };
 
     /**
