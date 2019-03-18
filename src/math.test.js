@@ -47,8 +47,9 @@ describe('Sum Primerial', function () {
     test.each([
         [6,10],
         [8, 17],
+        [12, 28],
     ])(
-        'IsPrime for %i is %p',
+        'SumPrime for %i is %p',
         (n, expected) => {
             expect(Util.sumPrime(n)).toBe(expected);
         },
