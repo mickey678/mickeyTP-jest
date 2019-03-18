@@ -81,7 +81,21 @@ Util.sumPrime = function(n) {
  * @returns {array}
  */
 Util.fizzBuzz = function(n) {
-
+  var tab8 = [];
+  for (let index = 1; index <= n; index++) {
+    if(index%3==0 && index%5==0){
+      tab8.push("FizzBuzz")
+    }
+    else if(index%3==0){
+      tab8.push("Fizz");
+    }else if(index%5==0){
+      tab8.push("Buzz")
+    } 
+    else{
+      tab8.push(index)
+    }
+  }
+  return tab8;
 };
 
 /**
