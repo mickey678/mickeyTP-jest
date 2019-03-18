@@ -9,6 +9,7 @@ describe('Factorial', function () {
         [3, 6],
         [4, 24],
         [5, 120],
+        [6, 720],
     ])(
         'Factorial %i equals to %i',
         (n, expected) => {
@@ -16,7 +17,7 @@ describe('Factorial', function () {
         },
     );
     test('Factorial of negative integers throws exception', () => {
-        expect(()=> {Util.factorial(-10)}).toThrow();
+        expect(()=> {Util.factorial(-10)}).toThrow(); 
     });
 });
 
