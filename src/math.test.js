@@ -31,6 +31,8 @@ describe('IsPrimerial', function () {
         [4, false],
         [5, true],
         [6, false],
+        [7, true],
+        [23, true],
     ])(
         'IsPrime for %i is %p',
         (n, expected) => {
