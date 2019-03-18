@@ -136,6 +136,37 @@ class Interval {
      * @returns {Interval[]}
      */
     exclusion(interval) {
+        var tab4 = [this.start,this.end];
+        var tab5 = [interval.start,interval.end];
+        var tabR = [];
+        var check = true;
+        for (let index = 0; index < tab4.length; index++) {
+            if(tab4[index]===tab5[0]){
+                tabR.push(tab4[index]);
+            } 
+        }
+        for (let index = 0; index < tab4.length; index++) {
+            if(tab4[index]==tab5[1]){
+                tabR.push(tab4[index]);
+            } 
+        }
+
+        for (let index = 0; index < tabR.length; index++) {
+            for (let index2 = 0; index2 < tab4.length; index2++) {
+                if(tabR[index]==tab4[index2]){
+                    tab4.splice(index2,1)
+                }
+                if(tabR[index]==tab5[index2]){
+                    tab5.splice(index2,1)
+                }
+                
+            }
+          
+            
+        }
+
+        var tab7 = tab5.concat(tab4);
+        return tab7.sort();
 
     };
 }
