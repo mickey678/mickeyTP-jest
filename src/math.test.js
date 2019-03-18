@@ -59,4 +59,17 @@ describe('Sum Primerial', function () {
 
 
 
+describe('Fizz Buzz', function () {
+    test.each([
+        [15,[1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"]],
+        [3, [1,2,"Fizz"]],
+        [5, [1,2,"Fizz",4,"Buzz"]],
+    ])(
+        'fizz buzz for %i is %p',
+        (n, expected) => {
+            expect(Util.fizzBuzz(n)).toEqual(expected);
+        },
+    );
+
+});
 
