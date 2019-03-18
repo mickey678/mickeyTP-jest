@@ -1,7 +1,5 @@
 let Util = {};
 
-
-
 Util.factorial = (n) => {
     if (n < 0) {
         throw 'Unable to compute factorial for n < 0'
