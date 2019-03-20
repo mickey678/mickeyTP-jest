@@ -73,3 +73,17 @@ describe('Fizz Buzz', function () {
 
 });
 
+
+describe('Cipher', function () {
+    test.each([
+        ["Test Unitaire","Uftu Vojubjsf"],
+        ["Matters","Nbuufst"],
+
+    ])(
+        'Ciper for %i is %p',
+        (n, expected) => {
+            expect(Util.cipher(n)).toEqual(expected);
+        },
+    );
+
+});
