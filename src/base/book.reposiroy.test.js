@@ -51,7 +51,7 @@ describe('Book repository Get Price Total', function () {
 
         dbMock.get.mockReturnValue(dbMock);
         dbMock.map.mockReturnValue(dbMock);
-        dbMock.value.mockReturnValue(dbMock);
+        dbMock.value.mockReturnValue(222);
 
         const repository = new BookRepository(dbMock);
        expect(repository.getTotalPrice()).toBe(222);
