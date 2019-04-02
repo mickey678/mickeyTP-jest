@@ -12,10 +12,10 @@
   "jest":{
     "verbose":true,
     "coverageTreshold":{
-      "branches":90,
-      "function":40,
+      "branches":100,
+      "function":100,
       "lines":100,
-      "statements":-10
+      "statements":100
     }
   },
   "repository": {
