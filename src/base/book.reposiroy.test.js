@@ -1,7 +1,6 @@
 const BookRepository = require('./book.repository');
 
 describe('Book repository Save', function () {
-
     test('Save a book', () => {
 
         const dbMock = {
@@ -12,10 +11,29 @@ describe('Book repository Save', function () {
 
         dbMock.get.mockReturnValue(dbMock);
         dbMock.push.mockReturnValue(dbMock);
-
         const repository = new BookRepository(dbMock);
         repository.save({id: 1, name: "Unit test"});
-
         expect(dbMock.write.mock.calls.length).toBe(1);
     });
 });
+
+
+
+describe('Book repository Total', function () {
+    test('Total book', () => {
+
+        const dbMock = {
+            size : jest.fn(),
+            get:jest.fn(),
+            value:jest.fn()
+        };
+
+        dbMock.get.mockReturnValue(dbMock);
+        dbMock.size.mockReturnValue(dbMock);
+        dbMock.value.mockReturnValue(90000);
+        const repository = new BookRepository(dbMock);
+       expect(repository.getTotalCount()).toBe(90000);
+    });
+});
+
+
