@@ -37,3 +37,27 @@ describe('Book repository Total', function () {
 });
 
 
+
+
+describe('Book repository Get Price Total', function () {
+    test('Price Total book', () => {
+
+        const dbMock = {
+            get:jest.fn(),
+            filter:jest.fn(),
+            map:jest.fn(),
+
+        };
+
+        dbMock.get.mockReturnValue(dbMock);
+        dbMock.map.mockReturnValue(dbMock);
+        dbMock.value.mockReturnValue(dbMock);
+
+        const repository = new BookRepository(dbMock);
+       expect(repository.getTotalPrice()).toBe(222);
+    });
+});
+
+
+
+
