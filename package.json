@@ -11,12 +11,14 @@
   },
   "jest":{
     "verbose":true,
-    "coverageTreshold":{
+    "coverageThreshold":{
+    "global": {
       "branches":90,
       "function":40,
-      "lines":100,
+      "lines":90,
       "statements":-10
     }
+   }
   },
   "repository": {
     "type": "git",
