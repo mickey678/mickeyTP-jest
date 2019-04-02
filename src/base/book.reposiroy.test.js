@@ -37,3 +37,55 @@ describe('Book repository Total', function () {
 });
 
 
+
+
+describe('Book repository Get Price Total', function () {
+    test('Price Total book', () => {
+
+        const dbMock = {
+            get:jest.fn(),
+            value:jest.fn(),
+            map:jest.fn(),
+            sum:jest.fn(),
+
+        };
+
+        dbMock.get.mockReturnValue(dbMock);
+        dbMock.map.mockReturnValue(dbMock);
+        dbMock.sum.mockReturnValue(dbMock);
+        dbMock.value.mockReturnValue(222);
+
+        const repository = new BookRepository(dbMock);
+       expect(repository.getTotalPrice()).toBe(222);
+    });
+});
+
+
+
+
+
+
+
+describe('Book repository Get a book name', function () {
+    test('Get a book', () => {
+
+        const dbMock = {
+            get:jest.fn(),
+            find:jest.fn(),
+            value:jest.fn(),
+
+        };
+
+        dbMock.get.mockReturnValue(dbMock);
+        dbMock.find.mockReturnValue(dbMock);
+        dbMock.value.mockReturnValue(222);
+
+        const repository = new BookRepository(dbMock);
+       expect(repository.getBookByName('9s8pz9')).toBe(222);
+    });
+});
+
+
+
+
+
