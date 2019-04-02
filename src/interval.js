@@ -4,9 +4,7 @@ class Interval {
         this.end = end
     }
 
-    toString() {
-        return "[" + this.start + "," + this.end + "]";
-    }
+
 
 
 
