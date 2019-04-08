@@ -95,7 +95,7 @@ describe('Book repository getCountBookAddedByMont', function () {
             value:jest.fn(),
             map:jest.fn(),
             count:jest.fn(),
-            size:jest.fn(),
+            sortBy:jest.fn(),
             filter:jest.fn()
 
         };
@@ -104,7 +104,7 @@ describe('Book repository getCountBookAddedByMont', function () {
         dbMock.find.mockReturnValue(dbMock);
         dbMock.map.mockReturnValue(dbMock);
         dbMock.count.mockReturnValue(dbMock);
-        dbMock.size.mockReturnValue(dbMock);
+        dbMock.sortBy.mockReturnValue(dbMock);
         dbMock.filter.mockReturnValue(dbMock);
         dbMock.value.mockReturnValue(222);
 

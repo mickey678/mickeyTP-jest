@@ -57,7 +57,8 @@ class BookRepository {
      */
     getCountBookAddedByMont(bookName) {
         var a = []
-        return this.db.get('books').filter({name:bookName}).sortBy('added_at').value()[0].added_at
+         a.push(this.db.get('books').filter({name:bookName}).sortBy('added_at').value())
+         
        
    
     }
