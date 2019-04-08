@@ -86,6 +86,32 @@ describe('Book repository Get a book name', function () {
 });
 
 
+describe('Book repository getCountBookAddedByMont', function () {
+    test('getCountBookAddedByMont', () => {
+
+        const dbMock = {
+            get:jest.fn(),
+            find:jest.fn(),
+            value:jest.fn(),
+            map:jest.fn(),
+            count:jest.fn(),
+            size:jest.fn()
+
+        };
+
+        dbMock.get.mockReturnValue(dbMock);
+        dbMock.find.mockReturnValue(dbMock);
+        dbMock.map.mockReturnValue(dbMock);
+        dbMock.count.mockReturnValue(dbMock);
+        dbMock.size.mockReturnValue(dbMock);
+        dbMock.value.mockReturnValue(222);
+
+        const repository = new BookRepository(dbMock);
+       expect(repository.getCountBookAddedByMont('d')).toBe(222);
+    });
+});
+
+
 
 
 
