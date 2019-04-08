@@ -81,7 +81,7 @@ describe('Book repository Get a book name', function () {
         dbMock.value.mockReturnValue(222);
 
         const repository = new BookRepository(dbMock);
-       expect(repository.getBookByName('9s8pz9')).toBe(222);
+       expect(repository.getBookByName('d')).toBe(222);
     });
 });
 
